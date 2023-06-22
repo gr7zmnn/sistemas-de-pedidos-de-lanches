@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Cardápio de Xis e Hambúrgueres</title>
+  <style>
+    .menu-item {
+      display: flex;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+
+    .menu-item img {
+      width: 100px;
+      margin-right: 10px;
+    }
+
+    .menu-item input[type="checkbox"] {
+      margin-right: 10px;
+    }
+
+    .menu-item label {
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <h1>Cardápio</h1>
+
+  <h2>Xis</h2>
+  <div class="menu-item">
+    <img src="xis1.jpg" alt="Xis 1">
+    <input type="checkbox" id="xis1" name="xis1">
+    <label for="xis1">Xis 1</label>
+    <span>R$ 15,00</span>
+  </div>
+
+  <div class="menu-item">
+    <img src="xis2.jpg" alt="Xis 2">
+    <input type="checkbox" id="xis2" name="xis2">
+    <label for="xis2">Xis 2</label>
+    <span>R$ 12,00</span>
+  </div>
+
+  <!-- Outros itens de Xis... -->
+
+  <h2>Hambúrgueres</h2>
+  <div class="menu-item">
+    <img src="hamburguer1.jpg" alt="Hambúrguer 1">
+    <input type="checkbox" id="hamburguer1" name="hamburguer1">
+    <label for="hamburguer1">Hambúrguer 1</label>
+    <span>R$ 10,00</span>
+  </div>
+
+  <div class="menu-item">
+    <img src="hamburguer2.jpg" alt="Hambúrguer 2">
+    <input type="checkbox" id="hamburguer2" name="hamburguer2">
+    <label for="hamburguer2">Hambúrguer 2</label>
+    <span>R$ 8,00</span>
+  </div>
+
+  <!-- Outros itens de hambúrgueres... -->
+
+  <h2>Bebidas</h2>
+  <div class="menu-item">
+    <img src="refrigerante.jpg" alt="Refrigerante">
+    <input type="checkbox" id="refrigerante" name="refrigerante">
+    <label for="refrigerante">Refrigerante</label>
+    <span>R$ 5,00</span>
+  </div>
+
+  <div class="menu-item">
+    <img src="suco.jpg" alt="Suco">
+    <input type="checkbox" id="suco" name="suco">
+    <label for="suco">Suco</label>
+    <span>R$ 4,00</span>
+  </div>
+
+  <!-- Outras bebidas... -->
+
+  <h2>Seu Pedido</h2>
+  <div id="pedido"></div>
+
+  <script>
+    const items = document.querySelectorAll('input[type="checkbox"]');
+    const pedido = document.getElementById('pedido');
+
+    items.forEach(item => {
+      item.addEventListener('change', function() {
+        if (this.checked) {
+          pedido.innerHTML += `<p>${this.labels[0].textContent}</p>`;
+        } else {
+          pedido.removeChild(pedido.lastChild);
+        }
+      });
+    });
+  </script>
+</body>
+</html>
