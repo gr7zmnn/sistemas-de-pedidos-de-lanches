@@ -3,137 +3,52 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Myke's Burger - O lugar perfeito para satisfazer sua paixão por hambúrgueres deliciosos.">
   <title>Myke's Burger</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
   <style>
-    * {
-      box-sizing: border-box;
-    }
-
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      margin: 0;
-      padding: 0;
-      background-color: #f7f7f7;
-      color: #333;
-    }
-    
-    header {
-      background-color: #333;
-      padding: 20px;
-      text-align: center;
-    }
-    
-    header h1 {
-      color: #fff;
-      margin: 0;
-      font-size: 36px;
-      text-transform: uppercase;
-      letter-spacing: 2px;
-    }
-    
-    nav {
-      margin-top: 20px;
-      text-align: center;
-    }
-    
-    nav ul {
-      list-style-type: none;
-      margin: 0;
-      padding: 0;
-    }
-    
-    nav ul li {
-      display: inline;
-      margin-right: 10px;
-    }
-    
-    nav ul li a {
-      color: #fff;
-      text-decoration: none;
-      font-size: 18px;
-      font-weight: bold;
-      text-transform: uppercase;
-      transition: color 0.3s ease;
-    }
-    
-    nav ul li a:hover {
-      color: #ccc;
-    }
-    
-    section {
-      max-width: 800px;
-      margin: 0 auto;
-      padding: 40px;
-      text-align: justify;
-      background-color: #fff;
-      border-radius: 5px;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    }
-    
-    h1, h2 {
-      color: #333;
-      text-align: center;
-      margin-bottom: 30px;
-    }
-    
-    p {
-      line-height: 1.6;
-      margin-bottom: 20px;
-    }
-    
-    .description {
-      text-align: center;
-      margin-bottom: 30px;
-    }
-    
-    .description img {
-      max-width: 100%;
-      border-radius: 5px;
-    }
-    
-    .menu-img {
-      float: right;
-      margin-left: 20px;
-      margin-bottom: 20px;
-      max-width: 300px;
-      border-radius: 5px;
-    }
-    
-    footer {
-      background-color: #333;
-      color: #fff;
-      padding: 20px;
-      text-align: center;
-      font-size: 14px;
-    }
-    
-    footer p {
-      margin: 0;
+    .hamburger-icon {
+      background-image: url("caminho-para-imagem");
+      background-size: contain;
+      background-repeat: no-repeat;
+      width: 30px;
+      height: 30px;
     }
   </style>
 </head>
-<body>
-  <header>
-    <h1>Myke's Burger</h1>
-    <nav>
-      <ul>
-        <li><a href="#home">Início</a></li>
-        <li><a href="#cardapio">Cardápio</a></li>
-        <li><a href="#pedidos">Meus Pedidos</a></li>
-        <li><a href="#perfil">Perfil</a></li>
-      </ul>
-    </nav>
+<body class="bg-gray-100">
+  <header class="bg-gray-900 text-white">
+    <div class="container mx-auto flex items-center justify-between py-4 px-8">
+      <h1 class="text-3xl font-bold flex items-center">
+        <span class="hamburger-icon mr-2"></span>
+        Myke's Burger
+      </h1>
+      <nav>
+        <ul class="flex space-x-4">
+          <li><a href="#home" class="hover:text-gray-300">Início</a></li>
+          <li><a href="#cardapio" class="hover:text-gray-300">Cardápio</a></li>
+          <li><a href="#pedidos" class="hover:text-gray-300">Meus Pedidos</a></li>
+          <li><a href="#perfil" class="hover:text-gray-300">Perfil</a></li>
+        </ul>
+      </nav>
+    </div>
   </header>
   
-  <section id="home">
-    <h2>Bem-vindo ao Myke's Burger</h2>
-    <div class="description">
-      <img src="caminho-para-imagem" alt="Imagem do Myke's Burger">
-      <p>Seja bem-vindo ao Myke's Burger, o lugar perfeito para satisfazer sua paixão por hambúrgueres deliciosos. Nossa história começou há mais de uma década, quando o fundador, Myke, decidiu compartilhar sua receita especial de hambúrguer com o mundo. Desde então, temos nos dedicado a fornecer aos nossos clientes sabores únicos, ingredientes frescos e uma experiência gastronômica inesquecível. Venha nos visitar e desfrute de hambúrgueres artesanais, acompanhamentos irresistíveis e um ambiente acolhedor. Estamos ansiosos para servi-lo!</p>
+  <section id="home" class="py-8">
+    <div class="container mx-auto">
+      <h2 class="text-4xl font-bold mb-4">Bem-vindo ao Myke's Burger</h2>
+      <div class="flex items-center">
+        <div class="w-1/3">
+          <img src="/images/inteiror.jpg" alt="Imagem do Myke's Burger" class="w-full rounded-lg">
+        </div>
+        <div class="w-2/3">
+          <p class="text-lg">Seja bem-vindo ao Myke's Burger, o lugar perfeito para satisfazer sua paixão por hambúrgueres deliciosos. Nossa história começou há mais de uma década, quando o fundador, Myke, decidiu compartilhar sua receita especial de hambúrguer com o mundo. Desde então, temos nos dedicado a fornecer aos nossos clientes sabores únicos, ingredientes frescos e uma experiência gastronômica inesquecível. Venha nos visitar e desfrute de hambúrgueres artesanais, acompanhamentos irresistíveis e um ambiente acolhedor. Estamos ansiosos para servi-lo!</p>
+        </div>
+      </div>
     </div>
   </section>
   
-  <footer>
+  <footer class="bg-gray-900 text-white text-center py-4">
     <p>&copy; 2023 Myke's Burger. Todos os direitos reservados.</p>
   </footer>
 </body>
