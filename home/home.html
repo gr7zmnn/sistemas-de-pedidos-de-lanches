@@ -7,6 +7,7 @@
   <title>Myke's Burger</title>
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
   <style>
+    /* Estilo para o ícone do hambúrguer */
     .hamburger-icon {
       background-image: url("caminho-para-imagem");
       background-size: contain;
@@ -14,10 +15,37 @@
       width: 30px;
       height: 30px;
     }
+
+    /* Estilo para a barra de navegação */
+    .navbar {
+      background-color: #F7A92C;
+      color: white;
+    }
+
+    /* Estilo para os links da barra de navegação */
+    .navbar a {
+      color: white;
+      transition: color 0.3s ease;
+    }
+
+    .navbar a:hover {
+      color: #FDEAC9;
+    }
+
+    /* Estilo para a seção de boas-vindas */
+    .welcome-section {
+      background-color: #FDEAC9;
+    }
+
+    /* Estilo para o rodapé */
+    .footer {
+      background-color: #F7A92C;
+      color: white;
+    }
   </style>
 </head>
 <body class="bg-gray-100">
-  <header class="bg-gray-900 text-white">
+  <header class="navbar text-white">
     <div class="container mx-auto flex items-center justify-between py-4 px-8">
       <h1 class="text-3xl font-bold flex items-center">
         <span class="hamburger-icon mr-2"></span>
@@ -34,7 +62,7 @@
     </div>
   </header>
   
-  <section id="home" class="py-8">
+  <section id="home" class="welcome-section py-8">
     <div class="container mx-auto">
       <h2 class="text-4xl font-bold mb-4">Bem-vindo ao Myke's Burger</h2>
       <div class="flex items-center">
@@ -48,7 +76,7 @@
     </div>
   </section>
   
-  <footer class="bg-gray-900 text-white text-center py-4">
+  <footer class="footer text-white text-center py-4">
     <p>&copy; 2023 Myke's Burger. Todos os direitos reservados.</p>
   </footer>
 </body>
