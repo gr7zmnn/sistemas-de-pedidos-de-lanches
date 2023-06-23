@@ -1,98 +1,135 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-BR">
 <head>
-  <title>Cardápio de Xis e Hambúrgueres</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Myke's Burger - O lugar perfeito para satisfazer sua paixão por hambúrgueres deliciosos.">
+  <title>Myke's Burger - Cardápio</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
   <style>
+    /* Estilo para os itens do cardápio */
     .menu-item {
-      display: flex;
-      align-items: center;
-      margin-bottom: 20px;
+      background-color: #FF6347; /* Vermelho - representando carne */
+      color: white;
+      padding: 1rem;
+      margin-bottom: 1rem;
     }
 
-    .menu-item img {
-      width: 100px;
-      margin-right: 10px;
-    }
-
-    .menu-item input[type="checkbox"] {
-      margin-right: 10px;
-    }
-
-    .menu-item label {
+    /* Estilo para os títulos dos itens do cardápio */
+    .menu-item h3 {
+      font-size: 1.5rem;
       font-weight: bold;
+      margin-top: 0;
+      margin-bottom: 0.5rem;
+    }
+
+    /* Estilo para a descrição dos itens do cardápio */
+    .menu-item p {
+      margin-top: 0;
+      margin-bottom: 0.5rem;
+    }
+
+    /* Estilo para o botão de adicionar ao pedido */
+    .add-to-order {
+      background-color: #FFA500; /* Laranja - representando queijo */
+      color: white;
+      border: none;
+      padding: 0.5rem 1rem;
+      cursor: pointer;
+    }
+
+    /* Estilo para o pedido ao lado direito */
+    .order {
+      background-color: #228B22; /* Verde - representando alface */
+      color: white;
+      padding: 1rem;
+      position: fixed;
+      top: 0;
+      right: 0;
+      width: 300px;
+      height: 100vh;
+      overflow-y: auto;
+    }
+
+    /* Estilo para o título do pedido */
+    .order h2 {
+      font-size: 1.5rem;
+      font-weight: bold;
+      margin-top: 0;
+      margin-bottom: 1rem;
+    }
+
+    /* Estilo para os itens do pedido */
+    .order-item {
+      margin-bottom: 0.5rem;
     }
   </style>
 </head>
-<body>
-  <h1>Cardápio</h1>
-
-  <h2>Xis</h2>
-  <div class="menu-item">
-    <img src="xis1.jpg" alt="Xis 1">
-    <input type="checkbox" id="xis1" name="xis1">
-    <label for="xis1">Xis 1</label>
-    <span>R$ 15,00</span>
-  </div>
-
-  <div class="menu-item">
-    <img src="xis2.jpg" alt="Xis 2">
-    <input type="checkbox" id="xis2" name="xis2">
-    <label for="xis2">Xis 2</label>
-    <span>R$ 12,00</span>
-  </div>
-
-  <!-- Outros itens de Xis... -->
-
-  <h2>Hambúrgueres</h2>
-  <div class="menu-item">
-    <img src="hamburguer1.jpg" alt="Hambúrguer 1">
-    <input type="checkbox" id="hamburguer1" name="hamburguer1">
-    <label for="hamburguer1">Hambúrguer 1</label>
-    <span>R$ 10,00</span>
-  </div>
-
-  <div class="menu-item">
-    <img src="hamburguer2.jpg" alt="Hambúrguer 2">
-    <input type="checkbox" id="hamburguer2" name="hamburguer2">
-    <label for="hamburguer2">Hambúrguer 2</label>
-    <span>R$ 8,00</span>
-  </div>
-
-  <!-- Outros itens de hambúrgueres... -->
-
-  <h2>Bebidas</h2>
-  <div class="menu-item">
-    <img src="refrigerante.jpg" alt="Refrigerante">
-    <input type="checkbox" id="refrigerante" name="refrigerante">
-    <label for="refrigerante">Refrigerante</label>
-    <span>R$ 5,00</span>
-  </div>
-
-  <div class="menu-item">
-    <img src="suco.jpg" alt="Suco">
-    <input type="checkbox" id="suco" name="suco">
-    <label for="suco">Suco</label>
-    <span>R$ 4,00</span>
-  </div>
-
-  <!-- Outras bebidas... -->
-
-  <h2>Seu Pedido</h2>
-  <div id="pedido"></div>
-
-  <script>
-    const items = document.querySelectorAll('input[type="checkbox"]');
-    const pedido = document.getElementById('pedido');
-
-    items.forEach(item => {
-      item.addEventListener('change', function() {
-        if (this.checked) {
-          pedido.innerHTML += `<p>${this.labels[0].textContent}</p>`;
-        } else {
-          pedido.removeChild(pedido.lastChild);
-        }
-      });
-    });
-  </script>
+<body class="bg-gray-100">
+  <header class="bg-gray-900 text-white">
+    <div class="container mx-auto flex items-center justify-between py-4 px-8">
+      <h1 class="text-3xl font-bold flex items-center">
+        <span class="hamburger-icon mr-2"></span>
+        Myke's Burger
+      </h1>
+      <nav>
+        <ul class="flex space-x-4">
+          <li><a href="#home" class="hover:text-gray-300">Início</a></li>
+          <li><a href="cardapio.html" class="hover:text-gray-300">Cardápio</a></li>
+          <li><a href="#pedidos" class="hover:text-gray-300">Meus Pedidos</a></li>
+          <li><a href="#perfil" class="hover:text-gray-300">Perfil</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  
+  <section id="cardapio" class="py-8">
+    <div class="container mx-auto">
+      <h2 class="text-4xl font-bold mb-4">Cardápio</h2>
+      <div class="flex">
+        <div class="w-3/4">
+          <div class="menu-item">
+            <h3>Hambúrguer Tradicional</h3>
+            <p>Pão, carne, queijo, alface, tomate e molho especial.</p>
+            <button class="add-to-order">Adicionar ao Pedido</button>
+          </div>
+          <div class="menu-item">
+            <h3>Hambúrguer Vegetariano</h3>
+            <p>Pão, hambúrguer de soja, queijo, alface, tomate e maionese vegana.</p>
+            <button class="add-to-order">Adicionar ao Pedido</button>
+          </div>
+          <div class="menu-item">
+            <h3>Hambúrguer com Bacon</h3>
+            <p>Pão, carne, queijo, bacon, alface, tomate e molho especial.</p>
+            <button class="add-to-order">Adicionar ao Pedido</button>
+          </div>
+          <div class="menu-item">
+            <h3>Hambúrguer de Frango</h3>
+            <p>Pão, hambúrguer de frango, queijo, alface, tomate e maionese.</p>
+            <button class="add-to-order">Adicionar ao Pedido</button>
+          </div>
+        </div>
+        <div class="w-1/4 order">
+          <h2>Meu Pedido</h2>
+          <div class="order-item">
+            <h3>Hambúrguer Tradicional</h3>
+            <p>Quantidade: 1</p>
+          </div>
+          <div class="order-item">
+            <h3>Hambúrguer Vegetariano</h3>
+            <p>Quantidade: 2</p>
+          </div>
+          <div class="order-item">
+            <h3>Hambúrguer com Bacon</h3>
+            <p>Quantidade: 1</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <footer class="bg-gray-900 text-white text-center py-4">
+    <p>&copy; 2023 Myke's Burger. Todos os direitos reservados.</p>
+  </footer>
 </body>
 </html>
